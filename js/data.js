@@ -1,14 +1,14 @@
-[
-	{
-		"id": 1,
-		"name": "Item #1",
-		"sections": [
-			{
-				"id": 2,
-				"name": "Item #1.1",
-				"sections": [
-					{
-						"id": 3,
+export default [
+  {
+    "id": 1,
+    "name": "Item #1",
+    "sections": [
+      {
+        "id": 2,
+        "name": "Item #1.1",
+        "sections": [
+          {
+            "id": 3,
 						"name": "Item #1.1.1",
 						"sections": []
 					},
