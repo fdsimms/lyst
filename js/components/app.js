@@ -7,7 +7,9 @@ export default class App extends Component {
     return(
       <div className="app">
         <header className="header"><h1>Lyst</h1></header>
-        <List list={data} />
+        <div className="list-container">
+          <List list={data} />
+        </div>
       </div>
     );
   }
