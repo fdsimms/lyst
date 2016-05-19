@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return(
       <div className="app">
-        <header className="header">Lyst</header>
+        <header className="header"><h1>Lyst</h1></header>
         <List list={data} />
       </div>
     );

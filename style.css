@@ -19,9 +19,13 @@ label, button, main, header {
   padding: 0;
 }
 
+ul, li {
+  list-style: none;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
+  font-family: "Dosis", sans-serif;
 }
 
 img {
@@ -42,4 +46,10 @@ button {
   clear: both;
   content: "";
   display: block;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: lowercase;
 }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PropTypes } from "react";
 import data from "../data";
 
 function mapPropsListToHTML(list) {
@@ -21,5 +21,9 @@ const List = ({ list }) => (
     {mapPropsListToHTML(list)}
   </ul>
 );
+
+List.propTypes = {
+  list: PropTypes.array.isRequired
+};
 
 export default List;
