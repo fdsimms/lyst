@@ -1,0 +1,45 @@
+html, body, h1, h2, ul, li, h3, a, p, div, input, form,
+label, button, main, header {
+  background: transparent;
+  border:  0;
+  color: inherit;
+  margin:  0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  box-shadow: none;
+  vertical-align: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+
+html, body, h1, h2, h3, a, p, div, input, form,
+label, button, main, header {
+  padding: 0;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+input {
+  cursor: text;
+}
+
+button {
+  cursor: pointer;
+}
+
+.group:before {
+  clear: both;
+  content: "";
+  display: block;
+}
