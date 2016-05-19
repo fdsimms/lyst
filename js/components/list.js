@@ -1,29 +1,35 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import data from "../data";
 
-function mapPropsListToHTML(list) {
-  return list.map(item => {
-    var sections;
-    if (item.sections.length >= 0) {
-      sections = <List list={item.sections} />;
-    }
-    return(
-      <li key={item.id}>
+
+const List = React.createClass({
+  getInitialState() {
+    return { isClosed: true };
+  },
+
+  mapPropsListToHTML() {
+    return this.props.list.map(item => {
+      var sections;
+      if (item.sections.length >= 0) {
+        sections = <List list={item.sections} />;
+      }
+      return(
+        <li key={item.id}>
         {item.name}
         {sections}
-      </li>
+        </li>
+      );
+    });
+  },
+
+  render() {
+    return(
+      <ul className="list">
+      {this.mapPropsListToHTML()}
+      </ul>
     );
-  });
-}
+  }
 
-const List = ({ list }) => (
-  <ul className="list">
-    {mapPropsListToHTML(list)}
-  </ul>
-);
-
-List.propTypes = {
-  list: PropTypes.array.isRequired
-};
+});
 
 export default List;

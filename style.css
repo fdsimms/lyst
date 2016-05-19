@@ -1,4 +1,4 @@
-html, body, h1, h2, ul, li, h3, a, p, div, input, form,
+html, body, h1, h2, ul,li, h3, a, p, div, input, form,
 label, button, main, header {
   background: transparent;
   border:  0;
@@ -12,10 +12,6 @@ label, button, main, header {
   vertical-align: inherit;
   text-decoration: none;
   cursor: default;
-}
-
-html, body, h1, h2, h3, a, p, div, input, form,
-label, button, main, header {
   padding: 0;
 }
 
