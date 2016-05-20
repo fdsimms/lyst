@@ -20,22 +20,30 @@ const App = React.createClass({
 
   classicButton() {
     var classes = "button-classic";
+    var clickHandler;
     if (this.state.view === "classic") {
       classes += " " + "disabled";
+    } else {
+      clickHandler = this.toggleView;
     }
+
     return (
-      <button onClick={this.toggleView}
+      <button onClick={clickHandler}
               className={classes}>Classic</button>
     );
   },
 
   groceriesButton() {
     var classes = "button-groceries";
+    var clickHandler;
     if (this.state.view === "groceries") {
       classes += " " + "disabled";
+    } else {
+      clickHandler = this.toggleView;
     }
+
     return (
-      <button onClick={this.toggleView}
+      <button onClick={clickHandler}
               className={classes}>Groceries</button>
     );
   },
