@@ -8,6 +8,10 @@ const App = React.createClass({
     return { view: "classic" };
   },
 
+  data() {
+    return this.state.view === "classic" ? data : grocery;
+  },
+
   render() {
     return (
       <div className="app">
@@ -17,7 +21,7 @@ const App = React.createClass({
           <button className="button-groceries">Groceries</button>
         </div>
         <ul className="list-container">
-          {data.map(list =>
+          {this.data().map(list =>
             list.sections.length > 0 ?
             <List key={list.id} list={list} /> :
             <li className="list-item-text" key={list.id}>{list.name}</li>
