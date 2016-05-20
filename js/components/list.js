@@ -31,12 +31,12 @@ const List = React.createClass({
       );
     }
 
-    var classes = "list-item-text";
+    var classes = "item__text";
     if (this.hasChildren()) {
-      classes += " " + "clickable";
+      classes += " " + "item--clickable";
     }
     if (this.state.showChildren) {
-      classes += " " + "children-showing";
+      classes += " " + "item--children-showing";
     }
 
     var plusOrMinus;
@@ -48,7 +48,7 @@ const List = React.createClass({
     }
 
     return (
-        <li className="list-item">
+        <li className="item">
           <div className={classes} onClick={this.handleClick}>
             {plusOrMinus}
             {this.props.list.name}

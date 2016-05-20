@@ -19,7 +19,7 @@ const App = React.createClass({
   },
 
   classicButton() {
-    var classes = "button-classic";
+    var classes = "button";
     var clickHandler;
     if (this.state.view === "classic") {
       classes += " " + "disabled";
@@ -34,7 +34,7 @@ const App = React.createClass({
   },
 
   groceriesButton() {
-    var classes = "button-groceries";
+    var classes = "button";
     var clickHandler;
     if (this.state.view === "groceries") {
       classes += " " + "disabled";
@@ -51,16 +51,16 @@ const App = React.createClass({
   render() {
     return (
       <div className="app">
-        <header className="header"><h1>Lyst</h1></header>
+        <header className="header">
+          <h1 className="site-title">Lyst</h1>
+        </header>
         <div className="buttons">
           {this.classicButton()}
           {this.groceriesButton()}
         </div>
         <ul className="list-container">
           {this.data().map(list =>
-            list.sections.length > 0 ?
-            <List key={list.id} list={list} /> :
-            <li className="list-item-text" key={list.id}>{list.name}</li>
+            <List key={list.id} list={list} />
           )}
         </ul>
       </div>
