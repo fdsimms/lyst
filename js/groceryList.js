@@ -209,5 +209,10 @@ export default [
         ]
       }
     ]
+  },
+  {
+    "id":40,
+    "name": "Shampoo",
+    "sections": []
   }
 ];

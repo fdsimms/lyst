@@ -84,6 +84,13 @@ header h1 {
   background: #eee;
 }
 
+.clickable:hover .fa-plus-square {
+  color: #00B100;
+}
+.clickable:hover .fa-minus-square {
+  color: #FF5858;
+}
+
 .children-showing {
   color: #aaa;
 }
@@ -93,4 +100,16 @@ header h1 {
   border-right: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
   margin-top: 0px;
+}
+
+.fa.fa-plus-square {
+  font-size: 1em;
+  margin-right: 2px;
+  color: green;
+}
+
+.fa.fa-minus-square {
+  font-size: 1em;
+  margin-right: 2px;
+  color: red;
 }

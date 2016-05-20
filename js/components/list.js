@@ -21,7 +21,6 @@ const List = React.createClass({
     ));
   },
 
-
   render() {
     var children;
     if (this.hasChildren()) {
@@ -40,9 +39,18 @@ const List = React.createClass({
       classes += " " + "children-showing";
     }
 
+    var plusOrMinus;
+    if (this.hasChildren() && this.state.showChildren) {
+      plusOrMinus = <i className="fa fa-minus-square" />;
+    } else if (this.hasChildren()) {
+      plusOrMinus = <i className="fa fa-plus-square" />;
+
+    }
+
     return (
         <li className="list-item">
           <div className={classes} onClick={this.handleClick}>
+            {plusOrMinus}
             {this.props.list.name}
           </div>
           {children}
