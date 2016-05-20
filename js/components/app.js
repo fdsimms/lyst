@@ -1,30 +1,61 @@
 import React from "react";
-import grocery from "../groceryList";
+import groceries from "../groceryList";
 import data from "../data";
+import challenge from "../challengeResponses";
 import List from "./list";
 
 const App = React.createClass({
   getInitialState() {
-    return { view: "classic" };
+    return { view: "challenge" };
   },
 
-  toggleView() {
-    this.setState({
-      view: this.state.view === "classic" ? "groceries" : "classic"
-    });
+  setChallengeView() {
+    this.setState({ view: "challenge" });
+  },
+
+  setClassicView() {
+    this.setState({ view: "classic" });
+  },
+
+  setGroceriesView() {
+    this.setState({ view: "groceries" });
   },
 
   data() {
-    return this.state.view === "classic" ? data : grocery;
+    var returnVal;
+    if (this.state.view === "challenge") {
+      returnVal = challenge;
+    } else if (this.state.view === "classic") {
+      returnVal = data;
+    } else {
+      returnVal = groceries;
+    }
+
+    return returnVal;
+  },
+
+  challengeButton() {
+    var classes = "button";
+    var clickHandler;
+    if (this.state.view === "challenge") {
+      classes += " " + "button--disabled";
+    } else {
+      clickHandler = this.setChallengeView;
+    }
+
+    return (
+      <button onClick={clickHandler}
+              className={classes}>Responses</button>
+    );
   },
 
   classicButton() {
     var classes = "button";
     var clickHandler;
     if (this.state.view === "classic") {
-      classes += " " + "disabled";
+      classes += " " + "button--disabled";
     } else {
-      clickHandler = this.toggleView;
+      clickHandler = this.setClassicView;
     }
 
     return (
@@ -39,7 +70,7 @@ const App = React.createClass({
     if (this.state.view === "groceries") {
       classes += " " + "button--disabled";
     } else {
-      clickHandler = this.toggleView;
+      clickHandler = this.setGroceriesView;
     }
 
     return (
@@ -55,6 +86,7 @@ const App = React.createClass({
           <h1 className="site-title">Lyst</h1>
         </header>
         <div className="buttons">
+          {this.challengeButton()}
           {this.classicButton()}
           {this.groceriesButton()}
         </div>
