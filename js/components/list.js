@@ -4,19 +4,22 @@ import data from "../data";
 
 const List = React.createClass({
   getInitialState() {
-    return { isClosed: true };
+    return { showChildren: false};
+  },
+
+  handleClick() {
+    this.setState({ showChildren: !this.state.showChildren });
   },
 
   mapPropsListToHTML() {
-    return this.props.list.map(item => {
+    return this.props.list.sections.map(item => {
       var sections;
       if (item.sections.length >= 0) {
-        sections = <List list={item.sections} />;
+        sections = <List list={item}/>;
       }
       return(
         <li key={item.id}>
-        {item.name}
-        {sections}
+          {this.state.showChildren && sections}
         </li>
       );
     });
@@ -25,7 +28,8 @@ const List = React.createClass({
   render() {
     return(
       <ul className="list">
-      {this.mapPropsListToHTML()}
+        <li onClick={this.handleClick}>{this.props.list.name}</li>
+        {this.mapPropsListToHTML()}
       </ul>
     );
   }
