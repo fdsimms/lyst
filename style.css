@@ -113,3 +113,19 @@ header h1 {
   margin-right: 2px;
   color: red;
 }
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  display: block;
+  width: 65px;
+  text-align: center;
+  padding: 2.5px;
+  margin-right: 2.5px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}

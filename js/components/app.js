@@ -1,10 +1,21 @@
-import React, { Component } from "react";
-import data from "../groceryList";
+import React from "react";
+import grocery from "../groceryList";
+import data from "../data";
 import List from "./list";
 
-const App = () => (
+const App = React.createClass({
+  getInitialState() {
+    return { view: "classic" };
+  },
+
+  render() {
+    return (
       <div className="app">
         <header className="header"><h1>Lyst</h1></header>
+        <div className="buttons">
+          <button className="button-classic">Classic</button>
+          <button className="button-groceries">Groceries</button>
+        </div>
         <ul className="list-container">
           {data.map(list =>
             list.sections.length > 0 ?
@@ -14,5 +25,8 @@ const App = () => (
         </ul>
       </div>
     );
+  }
+});
+
 
 export default App;
