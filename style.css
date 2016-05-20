@@ -61,3 +61,11 @@ header {
   padding: 25px;
   border-radius: 3px;
 }
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  color: gold;
+}

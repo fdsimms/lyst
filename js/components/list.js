@@ -5,8 +5,14 @@ const List = React.createClass({
     return { showChildren: false };
   },
 
+  hasChildren() {
+    return this.props.list.sections.length > 0;
+  },
+
   handleClick() {
-    this.setState({ showChildren: !this.state.showChildren });
+    if (this.hasChildren()) {
+      this.setState({ showChildren: !this.state.showChildren });
+    }
   },
 
   mapPropsListToHTML() {
@@ -17,7 +23,7 @@ const List = React.createClass({
 
   render() {
     var children;
-    if (this.props.list.sections.length > 0) {
+    if (this.hasChildren()) {
       children = (
         <ul className="list">
           {this.state.showChildren && this.mapPropsListToHTML()}
@@ -25,9 +31,14 @@ const List = React.createClass({
       );
     }
 
+    var classes;
+    if (this.hasChildren()) {
+      classes = "clickable";
+    }
+
     return (
         <li>
-          <div onClick={this.handleClick}>
+          <div className={classes} onClick={this.handleClick}>
             {this.props.list.name}
           </div>
           {children}
