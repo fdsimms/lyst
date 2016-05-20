@@ -141,7 +141,7 @@ button {
   background-color: #eee;
 }
 
-.button.disabled:hover{
+.button--disabled:hover{
   background-color: white;
 }
 

@@ -37,7 +37,7 @@ const App = React.createClass({
     var classes = "button";
     var clickHandler;
     if (this.state.view === "groceries") {
-      classes += " " + "disabled";
+      classes += " " + "button--disabled";
     } else {
       clickHandler = this.toggleView;
     }
