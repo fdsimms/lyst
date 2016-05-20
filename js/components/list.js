@@ -21,6 +21,18 @@ const List = React.createClass({
     ));
   },
 
+  arrowSymbol() {
+    var arrowSymbol;
+    if (!this.state.showChildren && this.hasChildren()) {
+      arrowSymbol = <i className="fa fa-level-down"
+                           aria-hidden="true"></i>;
+    } else if (this.state.showChildren && this.hasChildren()) {
+      arrowSymbol = <i className="fa fa-level-up"
+                           aria-hidden="true"></i>;
+    }
+    return arrowSymbol;
+  },
+
   render() {
     var children;
     if (this.hasChildren()) {
@@ -36,20 +48,11 @@ const List = React.createClass({
       classes += " " + "clickable";
     }
 
-    var arrowSymbol;
-    if (!this.state.showChildren && this.hasChildren()) {
-      arrowSymbol = <i className="fa fa-level-down"
-                           aria-hidden="true"></i>;
-    } else if (this.state.showChildren && this.hasChildren()) {
-      arrowSymbol = <i className="fa fa-level-up"
-                           aria-hidden="true"></i>;
-    }
-
     return (
         <li className="list-item">
           <div className={classes} onClick={this.handleClick}>
             {this.props.list.name}
-            {arrowSymbol}
+            {this.arrowSymbol()}
           </div>
           {children}
         </li>
