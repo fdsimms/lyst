@@ -1,4 +1,4 @@
-html, body, h1, h2, ul,li, h3, a, p, div, input, form,
+html, body, h1, h2, h3, a, p, div, input, form,
 label, button, main, header {
   background: transparent;
   border:  0;
@@ -13,10 +13,6 @@ label, button, main, header {
   text-decoration: none;
   cursor: default;
   padding: 0;
-}
-
-ul, li {
-  list-style: none;
 }
 
 body {
@@ -58,10 +54,10 @@ header {
 
 .list-container {
   display: block;
-  width: 60%;
+  width: 55%;
   border: 2px solid #ccc;
   margin: auto;
-  min-height: 500px;
-  padding: 10px;
+  min-height: 475px;
+  padding: 25px;
   border-radius: 3px;
 }
