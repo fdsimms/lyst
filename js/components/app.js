@@ -8,8 +8,36 @@ const App = React.createClass({
     return { view: "classic" };
   },
 
+  toggleView() {
+    this.setState({
+      view: this.state.view === "classic" ? "groceries" : "classic"
+    });
+  },
+
   data() {
     return this.state.view === "classic" ? data : grocery;
+  },
+
+  classicButton() {
+    var classes = "button-classic";
+    if (this.state.view === "classic") {
+      classes += " " + "disabled";
+    }
+    return (
+      <button onClick={this.toggleView}
+              className={classes}>Classic</button>
+    );
+  },
+
+  groceriesButton() {
+    var classes = "button-groceries";
+    if (this.state.view === "groceries") {
+      classes += " " + "disabled";
+    }
+    return (
+      <button onClick={this.toggleView}
+              className={classes}>Groceries</button>
+    );
   },
 
   render() {
@@ -17,8 +45,8 @@ const App = React.createClass({
       <div className="app">
         <header className="header"><h1>Lyst</h1></header>
         <div className="buttons">
-          <button className="button-classic">Classic</button>
-          <button className="button-groceries">Groceries</button>
+          {this.classicButton()}
+          {this.groceriesButton()}
         </div>
         <ul className="list-container">
           {this.data().map(list =>

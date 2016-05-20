@@ -128,4 +128,11 @@ button {
   margin-right: 2.5px;
   border: 1px solid #aaa;
   border-radius: 10px;
+  text-transform: lowercase;
+  background: white;
+}
+
+button.disabled {
+  color: #aaa;
+  cursor: default;
 }
