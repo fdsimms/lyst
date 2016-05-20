@@ -136,6 +136,14 @@ button {
   background: white;
 }
 
+button:hover {
+  background-color: #eee;
+}
+
+button.disabled:hover{
+  background-color: white;
+}
+
 button.disabled {
   color: #aaa;
   cursor: default;
