@@ -1,10 +1,8 @@
 import React from "react";
-import data from "../data";
-
 
 const List = React.createClass({
   getInitialState() {
-    return { showChildren: false};
+    return { showChildren: false };
   },
 
   handleClick() {
@@ -12,25 +10,28 @@ const List = React.createClass({
   },
 
   mapPropsListToHTML() {
-    return this.props.list.sections.map(item => {
-      var sections;
-      if (item.sections.length >= 0) {
-        sections = <List list={item}/>;
-      }
-      return(
-        <li key={item.id}>
-          {this.state.showChildren && sections}
-        </li>
-      );
-    });
+    return this.props.list.sections.map(item => (
+      <List key={item.id} list={item}/>
+    ));
   },
 
   render() {
-    return(
-      <ul className="list">
-        <li onClick={this.handleClick}>{this.props.list.name}</li>
-        {this.mapPropsListToHTML()}
-      </ul>
+    var children;
+    if (this.props.list.sections.length > 0) {
+      children = (
+        <ul className="list">
+          {this.state.showChildren && this.mapPropsListToHTML()}
+        </ul>
+      );
+    }
+
+    return (
+        <li>
+          <div onClick={this.handleClick}>
+            {this.props.list.name}
+          </div>
+          {children}
+        </li>
     );
   }
 

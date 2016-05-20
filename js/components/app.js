@@ -5,11 +5,13 @@ import List from "./list";
 const App = () => (
       <div className="app">
         <header className="header"><h1>Lyst</h1></header>
-        <div className="list-container">
+        <ul className="list-container">
           {data.map(list =>
-            <List key={list.id} list={list} />
+            list.sections.length > 0 ?
+            <List key={list.id} list={list} /> :
+            <li key={list.id}>{list.name}</li>
           )}
-        </div>
+        </ul>
       </div>
     );
 
