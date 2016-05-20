@@ -104,14 +104,18 @@ header h1 {
 
 .fa.fa-plus-square {
   font-size: 1em;
-  margin-right: 2px;
+  position: absolute;
+  top: 2px;
+  left: -16px;
   color: green;
 }
 
 .fa.fa-minus-square {
   font-size: 1em;
-  margin-right: 2px;
+  position: absolute;
   color: red;
+  top: 2px;
+  left: -16px;
 }
 
 .buttons {
