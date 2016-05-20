@@ -31,15 +31,25 @@ const List = React.createClass({
       );
     }
 
-    var classes;
+    var classes = "list-item-text";
     if (this.hasChildren()) {
-      classes = "clickable";
+      classes += " " + "clickable";
+    }
+
+    var arrowSymbol;
+    if (!this.state.showChildren && this.hasChildren()) {
+      arrowSymbol = <i className="fa fa-level-down"
+                           aria-hidden="true"></i>;
+    } else if (this.state.showChildren && this.hasChildren()) {
+      arrowSymbol = <i className="fa fa-level-up"
+                           aria-hidden="true"></i>;
     }
 
     return (
-        <li>
+        <li className="list-item">
           <div className={classes} onClick={this.handleClick}>
             {this.props.list.name}
+            {arrowSymbol}
           </div>
           {children}
         </li>
