@@ -15,8 +15,14 @@ label, button, main, header {
   padding: 0;
 }
 
-ul, li {
+ul {
   list-style: none;
+  display: block;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 10px;
 }
 
 body {
@@ -57,54 +63,34 @@ header h1 {
     text-transform: lowercase;
 }
 
-main {
-  display: block;
-  width: 55%;
-  border: 2px solid #ccc;
-  margin: auto;
-  min-height: 475px;
-  background: white;
-  position: relative;
-  border-radius: 3px;
-}
-
 .list-container {
   display: block;
-  position: absolute;
-  top: 50%;
-  margin: 0;
+  margin: 25px auto 10px auto;
   padding: 0;
-  left: 50%;
+  width: 45%;
   border: 2px solid #aaa;
-  background: #f5f5f5;
+  background: white;
   padding: 25px;
   border-radius: 3px;
-  transform: translate(-50%, -50%);
-
 }
 
 .clickable {
   cursor: pointer;
+  font-weight: bold;
 }
 
 .clickable:hover {
   color: gold;
+  background: #eee;
 }
 
-.fa-level-down {
-  position: absolute;
-  top: 2px;
-  right: -15px;
-}
-
-.fa-level-up {
-  position: absolute;
-  top: 2px;
-  right: -15px;
-  transform: rotate(-90deg);
+.children-showing {
+  color: #aaa;
 }
 
 .list-item-text {
-  display: inline;
   position: relative;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  margin-top: 0px;
 }
