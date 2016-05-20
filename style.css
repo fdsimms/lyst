@@ -145,7 +145,7 @@ button {
   background-color: white;
 }
 
-.button.disabled {
+.button--disabled {
   color: #aaa;
   cursor: default;
 }
