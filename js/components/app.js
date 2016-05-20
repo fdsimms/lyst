@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import data from "../data";
+import data from "../groceryList";
 import List from "./list";
 
 const App = () => (
