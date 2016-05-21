@@ -148,6 +148,7 @@ button {
 .button:active {
   position: relative;
   top: 2px;
+  background-color: #ddd;
 }
 
 .button--disabled:active {
