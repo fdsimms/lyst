@@ -143,6 +143,70 @@ export default [
     "id": 3,
     "name": "Problem #3",
     "sections": [
+      { id: "21",
+        name: "How would you determine which browsers to support?",
+        sections: [
+          {
+            id: "22",
+            name: "In an ideal situation, we would have access to analytics about the real-life usage of our app—how many people are using each browser to access it? Because we are building this app out from scratch, we don't have that luxury in this case. Nevertheless, it might still be useful to look at the usage of VenueBook's other apps, provided they serve a similar function and have a similar target demographic. Those stats might give us a partial jumping-off point, especially because we might be able to make the assumption that some of the users of VenueBook's other apps would find themselves using the new one because of the brand association.",
+            sections: [
+              {
+                id: "23",
+                name: "In addition, the prompt helpfully gives a few bits of information to consider—the app needs to look good on desktop computers and mobile devices, and it's public-facing. As far as the first part goes, this means we need to look at the numbers of active users of traditional desktop browsers (Chrome, Safari, IE) as well as for users of mobile browsers (e.g. the Android browser). And because it's public-facing, we can't make the shortcut of assuming all of our users are using fully updated versions of techie-beloved browsers like Chrome. This might be a consideration we could make if it were an internal tool for the devs, but we have to cater to a much wider base here.",
+                sections: [
+                  {
+                    id: "24",
+                    name: "Another reasonable place to winnow down the choices is geography. Because VenueBook only operates in four cities right now, it could be argued that we could narrow our choices down to the top browsers used in just those cities or regions. However, this could be seen as gambling against the possibility of VenueBook expanding to other places. If VenueBook wanted to set up shop in China all of a sudden, we might find ourselves wishing we had given the older IEs a bit more TLC.",
+                    sections: [
+                      {
+                        id: "25",
+                        name: "    In sum, I would choose browsers by looking at a combination of these considerations and talking with the team about which considerations matter the most to the product's success. It's paramount to support at least the last handful of versions of the major browsers, and in this case we need to throw in the major mobile browsers as well. The rest of the list would be populated by carefully weighing the urgency of reaching certain demographics against the time it takes to support additional browsers and the ramifications it leads to regarding how we can style things.",
+                        sections: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+
+      },
+      {
+        id: 26,
+        name: "How would you distinguish HTML/CSS code that is tailored for mobile versus desktop?",
+        sections: [
+          {
+            id: 27,
+            name: "For the CSS, I'd use three main stylesheets: one that acts as a sort of global stylesheet, one that addresses only desktop styles, and another that addresses only mobile styles. Any of these stylesheets could be modularized out into smaller parts if necessary. The main thrust of the approach is that the global stylesheet contributes the stylings that apply to the site no matter what the device is (things like colors and fonts come to mind), whereas the desktop and mobile stylesheets govern the more specific stylistic needs of their respective domains. This might mean moving a sidebar on desktop to the top of the page on mobile to save precious horizontal space, for example. Styling would be applied to the correct devices by the saving graces of CSS3 media queries, which would be used to target the correct range of screen sizes.",
+            sections: [
+              {
+                id: 28,
+                name: "As far as HTML goes, if we happened to have HTML elements that are only meant to be shown on mobile, I would add a prefix to the class names to reflect that. Something like `class=\"m-header-bar\"` or `class=\"d-side-bar\"` for mobile and desktop, respectively. That way, it would remain clear which device the element is meant for.",
+                sections: [
+                  {
+                    id: 29,
+                    name: "The goal of the separation and namespacing is to make sure that we know exactly where to find our mobile code versus our desktop code, and we know at a glance which type of code we're looking at. This helps us avoid encroaching on the wrong territory when writing new styling.",
+                    sections: []
+                  }
+                ]
+
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 30,
+        name: "How would you describe the pros and cons of your solution to the CTO and product manager?",
+        sections: [
+          {
+            id: 31,
+            name: "For the most part, the tradeoffs when making decisions about browser support are pretty similar no matter the project. The cons of my solution come from the fact that it's a compromise between full support for all browsers and ease of production. On one end, supporting more browsers might allow you to reach a larger audience. But it also might not prove useful if your target demographics don't even use certain browsers. On the other other end, only supporting the most current browsers is going to be a lot simpler from a production standpoint, but will cut a lot of potential users out of the picture. I believe that my solution finds a happy mean between the two extremes, because it leverages data and insight about VenueBook's target demographics, current users, and geography to find a point on the spectrum where the most users are supported by the least number of browsers.",
+            sections: []
+          }
+        ]
+      }
     ]
   }
 ];
