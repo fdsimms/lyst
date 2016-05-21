@@ -2,7 +2,7 @@
 
 [Live Link][page]
 
-[![image](assets/screenshot.png)][page]
+<!-- [![image](assets/screenshot.png)][page] -->
 [page]: https://www.fsdimms.com/lyst
 
 ## Summary
