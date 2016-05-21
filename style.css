@@ -81,6 +81,10 @@ button {
 
 .item--clickable:hover {
   color: gold;
+  background: #f5f5f5;
+}
+
+.item--clickable:active {
   background: #eee;
 }
 
@@ -139,6 +143,15 @@ button {
 
 .button:hover {
   background-color: #eee;
+}
+
+.button:active {
+  position: relative;
+  top: 2px;
+}
+
+.button--disabled:active {
+  position: static;
 }
 
 .button--disabled:hover{
