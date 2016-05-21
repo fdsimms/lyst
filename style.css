@@ -55,6 +55,7 @@ button {
   display: block;
   height: 50px;
   text-align: center;
+  margin-top: 15px;
 }
 
 .site-title {
