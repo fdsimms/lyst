@@ -20360,6 +20360,11 @@
 	  getInitialState: function getInitialState() {
 	    return { showChildren: false };
 	  },
+	  componentWillReceiveProps: function componentWillReceiveProps() {
+	    // closes all children when a new view is selected
+	    // would be bad if the App component had other reasons to rerender
+	    this.setState({ showChildren: false });
+	  },
 	  hasChildren: function hasChildren() {
 	    return this.props.list.sections.length > 0;
 	  },
