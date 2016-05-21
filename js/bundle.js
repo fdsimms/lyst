@@ -20599,7 +20599,11 @@
 	  "sections": [{
 	    "id": 1000,
 	    "name": "You're looking at it!",
-	    "sections": []
+	    "sections": [{
+	      "id": 1001,
+	      "name": "But tell me about the design choices you made.",
+	      "sections": []
+	    }]
 	  }]
 	}, {
 	  "id": 1,

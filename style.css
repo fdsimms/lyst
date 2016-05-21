@@ -66,11 +66,10 @@ button {
 .list-container {
   display: block;
   margin: 25px auto 10px auto;
-  padding: 0;
   width: 45%;
   border: 2px solid #aaa;
   background: white;
-  padding: 25px;
+  padding: 30px;
   border-radius: 3px;
 }
 
@@ -104,18 +103,18 @@ button {
 }
 
 .fa.fa-plus-square {
-  font-size: 1em;
+  font-size: 0.9em;
   position: absolute;
-  top: 2px;
+  top: 4px;
   left: -16px;
   color: green;
 }
 
 .fa.fa-minus-square {
-  font-size: 1em;
+  font-size: 0.9em;
   position: absolute;
   color: red;
-  top: 2px;
+  top: 4px;
   left: -16px;
 }
 
