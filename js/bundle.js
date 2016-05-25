@@ -20190,14 +20190,12 @@
 	  getInitialState: function getInitialState() {
 	    return { view: "challenge" };
 	  },
-	  setChallengeView: function setChallengeView() {
-	    this.setState({ view: "challenge" });
-	  },
-	  setClassicView: function setClassicView() {
-	    this.setState({ view: "classic" });
-	  },
-	  setGroceriesView: function setGroceriesView() {
-	    this.setState({ view: "groceries" });
+	  setView: function setView(view) {
+	    var _this = this;
+	
+	    return function () {
+	      _this.setState({ view: view });
+	    };
 	  },
 	  data: function data() {
 	    var returnVal;
@@ -20217,7 +20215,7 @@
 	    if (this.state.view === "challenge") {
 	      classes += " " + "button--disabled";
 	    } else {
-	      clickHandler = this.setChallengeView;
+	      clickHandler = this.setView("challenge");
 	    }
 	
 	    return _react2.default.createElement(
@@ -20233,7 +20231,7 @@
 	    if (this.state.view === "classic") {
 	      classes += " " + "button--disabled";
 	    } else {
-	      clickHandler = this.setClassicView;
+	      clickHandler = this.setView("classic");
 	    }
 	
 	    return _react2.default.createElement(
@@ -20249,7 +20247,7 @@
 	    if (this.state.view === "groceries") {
 	      classes += " " + "button--disabled";
 	    } else {
-	      clickHandler = this.setGroceriesView;
+	      clickHandler = this.setView("groceries");
 	    }
 	
 	    return _react2.default.createElement(
@@ -20616,7 +20614,7 @@
 	              "sections": []
 	            }, {
 	              "id": 19,
-	              "name": "  this.profile.fetch();",
+	              "name": "return this.profile.fetch();",
 	              "sections": []
 	            }, {
 	              "id": 20,

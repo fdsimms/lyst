@@ -9,16 +9,10 @@ const App = React.createClass({
     return { view: "challenge" };
   },
 
-  setChallengeView() {
-    this.setState({ view: "challenge" });
-  },
-
-  setClassicView() {
-    this.setState({ view: "classic" });
-  },
-
-  setGroceriesView() {
-    this.setState({ view: "groceries" });
+  setView(view) {
+    return () => {
+      this.setState({ view });
+    };
   },
 
   data() {
@@ -40,7 +34,7 @@ const App = React.createClass({
     if (this.state.view === "challenge") {
       classes += " " + "button--disabled";
     } else {
-      clickHandler = this.setChallengeView;
+      clickHandler = this.setView("challenge");
     }
 
     return (
@@ -55,7 +49,7 @@ const App = React.createClass({
     if (this.state.view === "classic") {
       classes += " " + "button--disabled";
     } else {
-      clickHandler = this.setClassicView;
+      clickHandler = this.setView("classic");
     }
 
     return (
@@ -70,7 +64,7 @@ const App = React.createClass({
     if (this.state.view === "groceries") {
       classes += " " + "button--disabled";
     } else {
-      clickHandler = this.setGroceriesView;
+      clickHandler = this.setView("groceries");
     }
 
     return (
