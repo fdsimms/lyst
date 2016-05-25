@@ -137,7 +137,7 @@ export default [
                           },
                           {
                             "id": 19,
-                            "name": "  this.profile.fetch();",
+                            "name": "return this.profile.fetch();",
                             "sections": []
                           },
                           {
