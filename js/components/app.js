@@ -1,12 +1,11 @@
 import React from "react";
 import groceries from "../groceryList";
 import data from "../data";
-import challenge from "../challengeResponses";
 import List from "./list";
 
 const App = React.createClass({
   getInitialState() {
-    return { view: "challenge" };
+    return { view: "classic" };
   },
 
   setView(view) {
@@ -16,31 +15,7 @@ const App = React.createClass({
   },
 
   data() {
-    var returnVal;
-    if (this.state.view === "challenge") {
-      returnVal = challenge;
-    } else if (this.state.view === "classic") {
-      returnVal = data;
-    } else {
-      returnVal = groceries;
-    }
-
-    return returnVal;
-  },
-
-  challengeButton() {
-    var classes = "button";
-    var clickHandler;
-    if (this.state.view === "challenge") {
-      classes += " " + "button--disabled";
-    } else {
-      clickHandler = this.setView("challenge");
-    }
-
-    return (
-      <button onClick={clickHandler}
-              className={classes}>Responses</button>
-    );
+    return this.state.view === "classic" ? data : groceries;
   },
 
   classicButton() {
@@ -80,7 +55,6 @@ const App = React.createClass({
           <h1 className="site-title">Lyst</h1>
         </header>
         <div className="buttons">
-          {this.challengeButton()}
           {this.classicButton()}
           {this.groceriesButton()}
         </div>
