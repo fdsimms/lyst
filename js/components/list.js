@@ -5,10 +5,10 @@ const List = React.createClass({
     return { showChildren: false };
   },
 
-  componentWillReceiveProps() {
-    // closes all children when a new view is selected
-    // would be bad if the App component had other reasons to rerender
-    this.setState({ showChildren: false});
+  componentWillReceiveProps(nextProps) {
+    if (this.props.list !== nextProps.list) {
+      this.setState({ showChildren: false});
+    }
   },
 
   hasChildren() {
